@@ -14,8 +14,28 @@ st.title("Curriculum Dependency Analyzer")
 # LOAD DATA
 # =========================================================
 
-courses_df = pd.read_csv("courses_data.csv")
-prereq_df = pd.read_csv("prerequisites.csv")
+st.sidebar.header("Curriculum Files")
+
+courses_file = st.sidebar.file_uploader(
+    "Upload courses_data.csv",
+    type="csv"
+)
+
+prereq_file = st.sidebar.file_uploader(
+    "Upload prerequisites.csv",
+    type="csv"
+)
+
+# Wait until both files are uploaded
+if courses_file is None or prereq_file is None:
+    st.info("Please upload both CSV files to begin.")
+    st.stop()
+
+courses_df = pd.read_csv(courses_file)
+prereq_df = pd.read_csv(prereq_file)
+
+#courses_df = pd.read_csv("courses_data.csv")
+#prereq_df = pd.read_csv("prerequisites.csv")
 
 # =========================================================
 # SIDEBAR
