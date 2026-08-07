@@ -2,6 +2,7 @@ import streamlit as st
 import pandas as pd
 import networkx as nx
 import matplotlib.pyplot as plt
+import os
 
 st.set_page_config(
     page_title="Curriculum Dependency Analyzer",
@@ -14,25 +15,58 @@ st.title("Curriculum Dependency Analyzer")
 # LOAD DATA
 # =========================================================
 
-st.sidebar.header("Curriculum Files")
+st.sidebar.header("Entering Fall Year")
 
-courses_file = st.sidebar.file_uploader(
-    "Upload courses_data.csv",
-    type="csv"
+source = st.sidebar.radio(
+    "Curriculum Source Year",
+    [
+        "2024",
+        "2026"
+    ]
 )
 
-prereq_file = st.sidebar.file_uploader(
-    "Upload prerequisites.csv",
-    type="csv"
-)
+if source == "2024":
 
-# Wait until both files are uploaded
-if courses_file is None or prereq_file is None:
-    st.info("Please upload both CSV files to begin.")
-    st.stop()
+    concentration = st.sidebar.selectbox(
+        "Concentration",
+        [
+            "Mechanical Engineering",
+            "Materials Engineering",
+            "Enviromental Engineering"
+        ]
+    )
 
-courses_df = pd.read_csv(courses_file)
-prereq_df = pd.read_csv(prereq_file)
+    folder_map = {
+        "Mechanical Engineering": "curricula/Mechanical",
+        "Materials Engineering": "curricula/Materials",
+        "Enviromental Engineering": "curricula/Enviromental"
+    }
+
+    folder = folder_map[concentration]
+
+    courses_df = pd.read_csv(os.path.join(folder,"courses_data.csv"))
+    prereq_df = pd.read_csv(os.path.join(folder, "prerequisites.csv"))
+else:
+
+    concentration = st.sidebar.selectbox(
+        "Concentration",
+        [
+            "Mechanical Engineering",
+            "Materials Engineering",
+            "Enviromental Engineering"
+        ]
+    )
+
+    folder_map = {
+        "Mechanical Engineering": "curricula/Mechanical",
+        "Materials Engineering": "curricula/Materials",
+        "Enviromental Engineering": "curricula/Enviromental"
+    }
+
+    folder = folder_map[concentration]
+
+    courses_df = pd.read_csv(os.path.join(folder,"courses_data.csv"))
+    prereq_df = pd.read_csv(os.path.join(folder, "prerequisites.csv"))
 
 #courses_df = pd.read_csv("courses_data.csv")
 #prereq_df = pd.read_csv("prerequisites.csv")
