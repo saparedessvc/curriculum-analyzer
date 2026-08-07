@@ -35,22 +35,29 @@ if source == "2024":
         ]
     )
 
-    folder_map = {
+    file_map_conc = {
         "Mechanical Engineering": "courses_data_2024.csv",
         "Materials Engineering": "courses_data_mat_2024.csv",
         "Enviromental Engineering": "courses_data_env_2024.csv"
     }
+    
+    file_map_pre = {
+        "Mechanical Engineering": "prerequisites.csv",
+        "Materials Engineering": "prerequisites_mat.csv",
+        "Enviromental Engineering": "prerequisites_env.csv"
+    }
 
-    file = folder_map[concentration]
+    file_conc = file_map_conc[concentration]
+    file_pre = file_map_pre[concentration]
 
-    courses_df = pd.read_csv(file)
-    prereq_df = pd.read_csv("prerequisites.csv")
+    courses_df = pd.read_csv(file_conc)
+    prereq_df = pd.read_csv(file_pre)
 else:
 
     concentration = st.sidebar.selectbox(
         "Concentration",
         [
-            "Mechanical Engineeringa",
+            "Mechanical Engineering",
             "Materials Engineering",
             "Enviromental Engineering"
         ]
