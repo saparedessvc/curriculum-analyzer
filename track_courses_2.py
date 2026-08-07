@@ -50,7 +50,7 @@ else:
     concentration = st.sidebar.selectbox(
         "Concentration",
         [
-            "Mechanical Engineering",
+            "Mechanical Engineeringa",
             "Materials Engineering",
             "Enviromental Engineering"
         ]
