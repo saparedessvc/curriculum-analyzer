@@ -36,14 +36,14 @@ if source == "2024":
     )
 
     folder_map = {
-        "Mechanical Engineering": "/curricula/Mechanical2024",
-        "Materials Engineering": "/curricula/Materials2024",
-        "Enviromental Engineering": "/curricula/Enviromental2024"
+        "Mechanical Engineering": "courses_data_2024.csv",
+        "Materials Engineering": "courses_data_mat_2024.csv",
+        "Enviromental Engineering": "courses_data_env_2024.csv"
     }
 
-    folder = folder_map[concentration]
+    file = folder_map[concentration]
 
-    courses_df = pd.read_csv(folder_map[concentration])
+    courses_df = pd.read_csv(file)
     prereq_df = pd.read_csv("prerequisites.csv")
 else:
 
