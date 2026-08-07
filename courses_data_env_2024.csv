@@ -1,0 +1,46 @@
+course,year,semester
+CH-101,1,Fall
+CH-103,1,Fall
+MA-111,1,Fall
+ENGR-100,1,Fall
+CORE-1400,1,Fall
+T1 Theology,1,Fall
+MA-112,1,Spring
+PH-111,1,Spring
+PH-113,1,Spring
+ENGR-105,1,Spring
+CORE-1500,1,Spring
+T1 Philosophy,1,Spring
+MA-211,2,Fall
+PH-112,2,Fall
+PH-114,2,Fall
+ENGR-226,2,Fall
+ENGR-228,2,Fall
+T1 History,2,Fall
+MA-212,2,Spring
+ENGR-115,2,Spring
+ENGR-245,2,Spring
+ENGR-240,2,Spring
+T1 Literature,2,Spring
+ENGR-215,3,Fall
+ENGR-220,3,Fall
+ENGR-223,3,Fall
+ENGR-310,3,Fall
+ES-220,3,Fall
+ENGR-315,3,Spring
+ENGR-340,3,Spring
+ENGR-350,3,Spring
+ENGR-450,3,Spring
+T1 Lang./Cul.,3,Fall
+T1 Am. Gov.,3,Spring
+T1 Social Sci.,3,Spring
+ENGR-330,4,Fall
+ENGR-366,4,Fall
+ENGR-451,4,Fall
+MA-241,4,Fall
+T2 Theology,4,Fall
+ENGR-ELEC,4,Spring
+ENGR-452,4,Spring
+CORE-3400,4,Spring
+T2 Culture,4,Fall
+T2 Expression,4,Spring
