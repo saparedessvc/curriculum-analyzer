@@ -2,7 +2,6 @@ import streamlit as st
 import pandas as pd
 import networkx as nx
 import matplotlib.pyplot as plt
-import os
 
 st.set_page_config(
     page_title="Curriculum Dependency Analyzer",
@@ -37,15 +36,15 @@ if source == "2024":
     )
 
     folder_map = {
-        "Mechanical Engineering": "curricula/Mechanical",
-        "Materials Engineering": "curricula/Materials",
-        "Enviromental Engineering": "curricula/Enviromental"
+        "Mechanical Engineering": "/curricula/Mechanical2024",
+        "Materials Engineering": "/curricula/Materials2024",
+        "Enviromental Engineering": "/curricula/Enviromental2024"
     }
 
     folder = folder_map[concentration]
 
-    courses_df = pd.read_csv(os.path.join(folder,"courses_data.csv"))
-    prereq_df = pd.read_csv(os.path.join(folder, "prerequisites.csv"))
+    courses_df = pd.read_csv(folder_map[concentration])
+    prereq_df = pd.read_csv("prerequisites.csv")
 else:
 
     concentration = st.sidebar.selectbox(
@@ -58,15 +57,15 @@ else:
     )
 
     folder_map = {
-        "Mechanical Engineering": "curricula/Mechanical",
-        "Materials Engineering": "curricula/Materials",
-        "Enviromental Engineering": "curricula/Enviromental"
+        "Mechanical Engineering": "/curricula/Mechanical2026",
+        "Materials Engineering": "/curricula/Materials2026",
+        "Enviromental Engineering": "/curricula/Enviromental2026"
     }
 
     folder = folder_map[concentration]
 
-    courses_df = pd.read_csv(os.path.join(folder,"courses_data.csv"))
-    prereq_df = pd.read_csv(os.path.join(folder, "prerequisites.csv"))
+    courses_df = pd.read_csv(folder_map[concentration])
+    prereq_df = pd.read_csv("prerequisites.csv")
 
 #courses_df = pd.read_csv("courses_data.csv")
 #prereq_df = pd.read_csv("prerequisites.csv")
