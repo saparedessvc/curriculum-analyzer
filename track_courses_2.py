@@ -63,7 +63,7 @@ else:
         ]
     )
 
-    folder_map_conc = {
+    file_map_conc = {
         "Mechanical Engineering": "courses_data_2026.csv",
         "Materials Engineering": "courses_data_mat_2026.csv",
         "Sustainable Engineering": "courses_data_sus_2026.csv"
