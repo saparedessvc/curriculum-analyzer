@@ -59,20 +59,27 @@ else:
         [
             "Mechanical Engineering",
             "Materials Engineering",
-            "Enviromental Engineering"
+            "Sustainable Engineering"
         ]
     )
 
-    folder_map = {
-        "Mechanical Engineering": "/curricula/Mechanical2026",
-        "Materials Engineering": "/curricula/Materials2026",
-        "Enviromental Engineering": "/curricula/Enviromental2026"
+    folder_map_conc = {
+        "Mechanical Engineering": "courses_data_2026.csv",
+        "Materials Engineering": "courses_data_mat_2026.csv",
+        "Sustainable Engineering": "courses_data_sus_2026.csv"
+    }
+    
+    file_map_pre = {
+        "Mechanical Engineering": "prerequisites_2026.csv",
+        "Materials Engineering": "prerequisites_mat_2026.csv",
+        "Sustainable Engineering": "prerequisites_sus_2026.csv"
     }
 
-    folder = folder_map[concentration]
+    file_conc = file_map_conc[concentration]
+    file_pre = file_map_pre[concentration]
 
-    courses_df = pd.read_csv(folder_map[concentration])
-    prereq_df = pd.read_csv("prerequisites.csv")
+    courses_df = pd.read_csv(file_conc)
+    prereq_df = pd.read_csv(file_pre)
 
 #courses_df = pd.read_csv("courses_data.csv")
 #prereq_df = pd.read_csv("prerequisites.csv")
